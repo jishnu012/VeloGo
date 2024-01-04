@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/velogo/reply_post/">
+    {% csrf_token %}
+<table>
+    <tr>
+        <input type="hidden"  value='{{ data.id }}'name="id">
+        <td><textarea name="reply"></textarea>
+        </td>
+        <td><input type="submit"></td>
+    </tr>
+</table>
+</form>
+</body>
+</html>

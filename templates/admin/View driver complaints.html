@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body><form action="/velogo/view_driver_complaints/" method="post">
+{% csrf_token %}
+      <table width="566" height="106" border="1">
+    <tr>
+        <td>From</td>
+        <td><input type="date" name="textfield" id="textfield" /></td>
+        <td>To</td>
+        <td><input type="date" name="textfield2" id="textfield2" /></td>
+        <td><input type="submit" value="Search" /></td>
+    </tr>
+  </table>
+<table width="480" height="137" border="1">
+  <tr>
+    <td>Sl No.</td>
+    <td>User Name</td>
+    <td>User Email</td>
+    <td>Complaint</td>
+    <td>Reply</td>
+    <td>Status</td>
+  </tr>
+    {% for i in data %}
+  <tr>
+    <td>{{ forloop.counter }}&nbsp;</td>
+    <td>{{ i.USERS }}&nbsp;</td>
+    <td>{{ i.Date}}&nbsp;</td>
+    <td>&nbsp;{{ i.Complaints }}</td>
+      <td>
+          {% if i.ComplaintStatus == 'Pending' %}
+              <a href="/velogo/admin_reply/{{ i.id }}">reply</a>
+          {% else %}
+
+
+          {{ i.Reply }}</td>
+      {% endif %}
+      <td>&nbsp;{{ i.ComplaintStatus}}</td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>
