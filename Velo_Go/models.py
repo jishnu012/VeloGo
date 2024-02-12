@@ -66,6 +66,9 @@ class Booking(models.Model):
     PickupTime = models.CharField(max_length=100)
     EstimatedPrice=models.CharField(max_length=100)
     EstimatedRideTime=models.CharField(max_length=100)
+    Status=models.CharField(max_length=100,default='')
+
+
 
 class BookingLogs(models.Model):
     BOOKING= models.ForeignKey(Booking, on_delete=models.CASCADE)
@@ -78,6 +81,13 @@ class Location(models.Model):
     Lattitude=models.CharField(max_length=100)
     Longitude=models.CharField(max_length=100)
     Place=models.CharField(max_length=100)
+
+class DriverLocation(models.Model):
+    Drivers = models.ForeignKey(Drivers, on_delete=models.CASCADE)
+    Lattitude=models.CharField(max_length=100)
+    Longitude=models.CharField(max_length=100)
+    Place=models.CharField(max_length=100)
+
 
 class RidePayments(models.Model):
     USERS = models.ForeignKey(Users, on_delete=models.CASCADE)

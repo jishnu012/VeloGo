@@ -68,7 +68,20 @@ urlpatterns = [
     path('Driver_view_seats/', views.Driver_view_seats),
     path('Driver_edit_seats/', views.Driver_edit_seats),
     path('Driver_edit_seats_post/', views.Driver_edit_seats_post),
+    path('delete_seat/', views.delete_seat),
+    path('Driver_delete_vehicle/', views.Driver_delete_vehicle),
     path('Driver_view_allocated_booking/', views.Driver_view_allocated_booking),
     path('Driver_otp_Verification/', views.Driver_otp_Verification),
+    path('Driver_view_rating/', views.Driver_view_rating),
+    path('Driver_view_Passengers_And_DropPoints/', views.Driver_view_Passengers_And_DropPoints),
+    path('Driver_View_payment/', views.Driver_View_payment),
+    path('Driver_view_previous_booking/', views.Driver_view_previous_booking),
 
+
+
+
+    path('user_Signup/',views.user_Signup),
+    path('UserViewProfile/',views.UserViewProfile),
+    path('UserChangepasswd/',views.UserChangepasswd),
+    path('User_send_AppRating/',views.User_send_AppRating)
 ]
